@@ -1,5 +1,5 @@
 PODS:
-  - SwiftyNavigationBar (5.1.2)
+  - SwiftyNavigationBar (5.2.0)
 
 DEPENDENCIES:
   - SwiftyNavigationBar (from `../`)
