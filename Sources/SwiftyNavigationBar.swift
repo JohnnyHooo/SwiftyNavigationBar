@@ -72,4 +72,5 @@ public class SwiftyNavigationBar {
             return self._viewController.navigationController
         }
     }
+    
 }

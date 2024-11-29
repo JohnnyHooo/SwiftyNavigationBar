@@ -27,6 +27,27 @@ import UIKit
 /// UINavigationController(Init)
 public extension UINavigationController {
     
+    override var prefersStatusBarHidden: Bool {
+        // 根据你的需求返回是否隐藏状态栏
+        if let topViewController = self.topViewController {
+            return topViewController.prefersStatusBarHidden
+        }
+        return false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+         // 设置状态栏样式
+         if let topViewController = self.topViewController {
+             return topViewController.preferredStatusBarStyle
+         }
+         return .default
+     }
+
+     override func setNeedsStatusBarAppearanceUpdate() {
+         // 在需要更新状态栏时调用此方法
+         super.setNeedsStatusBarAppearanceUpdate()
+     }
+    
     /// init with preference style
     convenience init(preference: ((Style) -> Void)?) {
         self.init(viewControllers: [], toolbarClass: nil, preference: preference)
